@@ -1,7 +1,15 @@
 <odoo>
 <record id="res_currency_gros_tournois" model="res.currency">
-    <field name="name">Gros Tournois</field>
+    <field name="full_name">Gros Tournois</field>
+    <field name="name">DGT</field>
     <field name="symbol">dgt</field>
+    <field name="position">after</field>
+    <field name="active">True</field>
+</record>
+<record id="res_currency_parisis" model="res.currency">
+    <field name="full_name">Parisis</field>
+    <field name="name">PAR</field>
+    <field name="symbol">Par</field>
     <field name="position">after</field>
     <field name="active">True</field>
 </record>

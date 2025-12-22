@@ -16,7 +16,7 @@
         "views/history_color.xml",
         "views/menu.xml",
         "data/uom_uom.xml",
-        "data/res_currency_data.xml",
+        "data/res_currency.xml",
     ],
 }
 
