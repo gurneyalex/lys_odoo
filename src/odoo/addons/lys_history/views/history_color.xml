@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_history_color_tree" model="ir.ui.view">
+        <field name="name">history.color.tree</field>
+        <field name="model">history.color</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="annotation"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_history_color_form" model="ir.ui.view">
+        <field name="name">history.color.form</field>
+        <field name="model">history.color</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="annotation"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_history_purchase_clothing_tree" model="ir.ui.view">
+        <field name="name">history.purchase.clothing.tree</field>
+        <field name="model">history.purchase.clothing</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="person_id"/>
+                <field name="price"/>
+                <field name="currency_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_history_purchase_clothing_form" model="ir.ui.view">
+        <field name="name">history.purchase.clothing.form</field>
+        <field name="model">history.purchase.clothing</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="type"/>
+                        <field name="person_id"/>
+                        <field name="craftsman_id"/>
+                        <field name="date"/>
+                        <field name="price"/>
+                        <field name="currency_id"/>
+                        <field name="account_id"/>
+                        <field name="source_page"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

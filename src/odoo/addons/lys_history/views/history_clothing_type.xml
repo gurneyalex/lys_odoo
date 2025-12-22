@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_history_clothing_type_tree" model="ir.ui.view">
+        <field name="name">history.clothing.type.tree</field>
+        <field name="model">history.clothing.type</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_history_clothing_type_form" model="ir.ui.view">
+        <field name="name">history.clothing.type.form</field>
+        <field name="model">history.clothing.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

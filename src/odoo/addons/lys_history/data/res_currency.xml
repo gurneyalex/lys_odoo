@@ -1,0 +1,9 @@
+<odoo>
+<record id="res_currency_gros_tournois" model="res.currency">
+    <field name="name">Gros Tournois</field>
+    <field name="symbol">dgt</field>
+    <field name="position">after</field>
+    <field name="active">True</field>
+</record>
+
+</odoo>
