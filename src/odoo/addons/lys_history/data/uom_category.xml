@@ -1,0 +1,8 @@
+<odoo>
+    <record id="uom_category_medieval_weight" model="uom.category">
+        <field name="name">Medieval Weight</field>
+    </record>
+    <record id="uom_category_medieval_length" model="uom.category">
+        <field name="name">Medieval Length</field>
+    </record>
+</odoo>

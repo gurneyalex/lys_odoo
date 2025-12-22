@@ -15,6 +15,9 @@
         "views/history_clothing_material.xml",
         "views/history_color.xml",
         "views/menu.xml",
+        "data/uom_category.xml",
+        "data/uom_uom.xml",
+        "data/res_currency_data.xml",
     ],
 }
 
