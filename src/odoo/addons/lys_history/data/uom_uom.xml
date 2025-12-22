@@ -1,16 +1,11 @@
 <odoo>
     <record id="uom_medieval_length_aune" model="uom.uom">
         <field name="name">Aune</field>
-        <field name="category_id" ref="uom.category_medieval_length" />
-        <field name="factor_inv">1.0</field>
-        <field name="uom_type">reference</field>
+        <field name="relative_factor" eval="1.0"/>
         <field name="active">True</field>
     </record>
    <record id="uom_medieval_weight_livre" model="uom.uom">
         <field name="name">Livre</field>
-        <field name="category_id" ref="uom.category_medieval_weight" />
-        <field name="factor_inv">1.0</field>
-        <field name="uom_type">reference</field>
-        <field name="active">True</field>
+        <field name="relative_factor" eval="1.0"/>
     </record>
 </odoo>
