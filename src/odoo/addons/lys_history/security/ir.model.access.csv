@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_history_source_account_user,history.source.account.user,model_history_source_account,base.group_user,1,1,1,1
+access_history_location_user,history.location.user,model_history_location,base.group_user,1,1,1,1
+access_history_person_user,history.person.user,model_history_person,base.group_user,1,1,1,1
+access_history_purchase_clothing_user,history.purchase.clothing.user,model_history_purchase_clothing,base.group_user,1,1,1,1
+access_history_purchase_raw_material_user,history.purchase.raw.material.user,model_history_purchase_raw_material,base.group_user,1,1,1,1
+access_history_clothing_type_user,history.clothing.type.user,model_history_clothing_type,base.group_user,1,1,1,1
+access_history_clothing_material_user,history.clothing.material.user,model_history_clothing_material,base.group_user,1,1,1,1
+access_history_color_user,history.color.user,model_history_color,base.group_user,1,1,1,1
