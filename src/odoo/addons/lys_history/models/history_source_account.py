@@ -3,6 +3,7 @@ from odoo import models, fields
 
 class HistorySourceAccount(models.Model):
     _name = "history.source.account"
+    _description = "Source Account"
 
     name = fields.Char(required=True)
     date_start = fields.Date()
@@ -15,6 +16,7 @@ class HistorySourceAccount(models.Model):
 
 class HistoryLocation(models.Model):
     _name = "history.location"
+    _description = "Location"
 
     name = fields.Char(required=True)
     shortcut = fields.Char(help="a shortcut for quickly searching")
@@ -24,6 +26,7 @@ class HistoryLocation(models.Model):
 
 class HistoryPerson(models.Model):
     _name = "history.person"
+    _description = "Person"
 
     name = fields.Char(required=True)
     shortcut = fields.Char(help="a shortcut for quickly searching")
@@ -31,6 +34,7 @@ class HistoryPerson(models.Model):
 
 class HistoryPurchase(models.AbstractModel):
     _name = "history.purchase"
+    _description = "Purchase"
     account_id = fields.Many2one("history.source.account", required=True)
     source_page = fields.Char()
     currency_id = fields.Many2one(related="account_id.currency_id")
@@ -40,15 +44,17 @@ class HistoryPurchase(models.AbstractModel):
 class HistoryPurchaseClothing(models.Model):
     _name = "history.purchase.clothing"
     _inherit = "history.purchase"
+    _description = "Purchase Clothing"
 
-    person_id = fields.Many2one(string="Recipient")
-    craftsman_id = fields.Many2one(string="Craftsman")
+    person_id = fields.Many2one("history.person", string="Recipient")
+    craftsman_id = fields.Many2one("history.person",string="Craftsman")
     name = fields.Char(required=True)
     type = fields.Many2one("history.clothing.type", required=True)
 
 class HistoryPurchaseRawMaterial(models.Model):
     _name = "history.purchase.raw.material"
     _inherit = "history.purchase"
+    _description = "Purchase Raw Material"
 
     name = fields.Char(required=True)
     material_id = fields.Many2one("history.clothing.material")
@@ -56,23 +62,26 @@ class HistoryPurchaseRawMaterial(models.Model):
     origin_id = fields.Many2one("history.location")
     currency_id = fields.Many2one(related="account_id.currency_id")
     unit_price = fields.Monetary()
-    quantity = fields.Float
+    quantity = fields.Float()
     uom_id = fields.Many2one("uom.uom")
 
 class HistoryClothingType(models.Model):
     _name = "history.clothing.type"
+    _description = "Clothing Type"
 
     name=fields.Char(required=True)
 
 
 class HistoryClothingMaterial(models.Model):
     _name = "history.clothing.material"
+    _description = "Clothing Material"
 
     name=fields.Char(required=True)
 
 
 class HistoryColor(models.Model):
     _name = "history.color"
+    _description = "Color"
 
     name = fields.Char(required=True)
     annotation = fields.Char()

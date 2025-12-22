@@ -3,7 +3,7 @@
     "license": "AGPL-3",
     "author": "Alexandre Fayolle <alexandre.fayolle@free.fr>",
     "category": "History",
-    "depends": ["base"],
+    "depends": ["base", "uom"],
     "data": [
         "security/ir.model.access.csv",
         "views/history_source_account.xml",
