@@ -1,0 +1,79 @@
+exclude: odoo/external-src/|odoo/local-src/pop_account_invoice_extract_purchase/
+
+repos:
+
+# pylint
+- repo: https://github.com/pycqa/pylint
+  rev: v3.1.1
+  hooks:
+  - id: pylint
+    name: pylint odoo
+    # check only specific Odoo addons
+    files: odoo/local-src/
+    types: ['file', 'python']   # to not check .csv and .conf files
+    args: ["--rcfile=.ci/pylintrc_odoo"]
+    additional_dependencies: [pylint-odoo==v9.1.3]
+
+# pre-commit-hooks
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v5.0.0
+  hooks:
+  - id: check-yaml
+    exclude: odoo/external-src/
+  - id: check-symlinks
+    exclude: odoo/external-src/
+  - id: check-xml
+    exclude: odoo/external-src/
+  - id: debug-statements
+    exclude: odoo/external-src/
+  - id: end-of-file-fixer
+    exclude: odoo/external-src/|samples/
+  - id: fix-encoding-pragma
+    args: ["--remove"]
+    exclude: odoo/external-src/
+  - id: mixed-line-ending
+    args: ["--fix=lf"]
+    types_or: [python, javascript, css, xml, yaml]
+    exclude: odoo/external-src/
+  - id: trailing-whitespace
+    types_or: [python, javascript, css, xml, yaml]
+    exclude: |
+        (?x)^(
+            .cookiecutter.context.yml|
+            odoo/external-src/
+        )$
+
+
+# ruff (= flake8 + isort + pyupgrade)
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.4.4
+  hooks:
+    - id: ruff
+      args: [--fix, --show-fixes]
+      exclude: __manifest__.py|__init__.py|odoo/external-src/
+    - id: ruff-format
+      args: [--diff]
+      exclude: __manifest__.py|__init__.py|odoo/external-src/
+    - id: ruff-format
+      exclude: __manifest__.py|__init__.py|odoo/external-src/
+
+# rstcheck
+- repo: https://github.com/rstcheck/rstcheck
+  rev: v6.2.1
+  hooks:
+  - id: rstcheck
+
+# local
+- repo: local
+  hooks:
+
+    # This hook ensures that our exclude list is still in sync with
+    # the addons we don't want to check (uninstalled addons).
+    # If this issue gets some support, we should replace it by a dynamic exclude list:
+    # https://github.com/pre-commit/pre-commit/issues/1035
+    # (Jira card for the follow-up https://jira.camptocamp.com/browse/BSRD-257)
+    - id: check_pre_commit_config_exclude
+      name: check_pre_commit_config_exclude
+      entry: ./.ci/check_pre_commit_config_exclude.sh
+      language: script
+      files: check_pre_commit_config_exclude.sh
