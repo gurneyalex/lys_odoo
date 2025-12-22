@@ -49,6 +49,13 @@
         <field name="view_mode">list,form</field>
     </record>
 
+    <!-- Window action for Clothing Caracteristics -->
+    <record id="action_history_clothing_caracteristic" model="ir.actions.act_window">
+        <field name="name">Clothing Caracteristics</field>
+        <field name="res_model">history.clothing.caracteristic</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
     <!-- Window action for Source Accounts -->
     <record id="action_history_source_account" model="ir.actions.act_window">
         <field name="name">Source Accounts</field>

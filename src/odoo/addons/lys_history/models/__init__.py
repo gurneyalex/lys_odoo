@@ -7,3 +7,4 @@ from . import history_color
 from . import history_purchase
 from . import history_purchase_clothing
 from . import history_purchase_raw_material
+from . import history_clothing_caracteristic

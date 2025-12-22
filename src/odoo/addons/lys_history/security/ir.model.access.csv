@@ -7,3 +7,4 @@ access_history_purchase_raw_material_user,history.purchase.raw.material.user,mod
 access_history_clothing_type_user,history.clothing.type.user,model_history_clothing_type,base.group_user,1,1,1,1
 access_history_clothing_material_user,history.clothing.material.user,model_history_clothing_material,base.group_user,1,1,1,1
 access_history_color_user,history.color.user,model_history_color,base.group_user,1,1,1,1
+access_history_clothing_caracteristic,access.history.clothing.caracteristic,model_history_clothing_caracteristic,base.group_user,1,1,1,1

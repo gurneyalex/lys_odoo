@@ -15,6 +15,26 @@
         </field>
     </record>
 
+    <!-- Search View -->
+    <record id="view_history_purchase_clothing_search" model="ir.ui.view">
+        <field name="name">history.purchase.clothing.search</field>
+        <field name="model">history.purchase.clothing</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="type"/>
+                <field name="person_id"/>
+                <field name="craftsman_ids"/>
+                <group>
+                    <filter string="Type" name="group_by_type" context="{'group_by': 'type'}"/>
+                    <filter string="Account" name="group_by_account_id" context="{'group_by': 'account_id'}"/>
+                    <filter string="Date" name="group_by_date" context="{'group_by': 'date'}"/>
+                    <filter string="Person" name="group_by_person_id" context="{'group_by': 'person_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
     <!-- Form View -->
     <record id="view_history_purchase_clothing_form" model="ir.ui.view">
         <field name="name">history.purchase.clothing.form</field>
@@ -23,15 +43,24 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="type"/>
-                        <field name="person_id"/>
-                        <field name="craftsman_id"/>
-                        <field name="date"/>
-                        <field name="price"/>
-                        <field name="currency_id"/>
-                        <field name="account_id"/>
-                        <field name="source_page"/>
+                        <group>
+                            <field name="account_id"/>
+                            <field name="source_page"/>
+                            <field name="date"/>
+                        </group>
+                        <group>
+                            <field name="name"/>
+                            <field name="type"/>
+                            <field name="caracteristic_ids" widget="many2many_tags"/>
+                            <field name="person_id"/>
+                            <field name="craftsman_ids" widget="many2many_tags" />
+                            <field name="price"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <group string="Materials">
+                        <label for="material_ids" string="Materials Used"/>
+                        <field name="material_ids" nolabel="1"/>
                     </group>
                 </sheet>
             </form>
