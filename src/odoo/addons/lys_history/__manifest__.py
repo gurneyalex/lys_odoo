@@ -14,6 +14,7 @@
         "views/history_clothing_type.xml",
         "views/history_clothing_material.xml",
         "views/history_color.xml",
+        "views/menu.xml",
     ],
 }
 

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Window action for Clothing Purchases -->
+    <record id="action_history_purchase_clothing" model="ir.actions.act_window">
+        <field name="name">Clothing Purchases</field>
+        <field name="res_model">history.purchase.clothing</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Window action for Raw Material Purchases -->
+    <record id="action_history_purchase_raw_material" model="ir.actions.act_window">
+        <field name="name">Raw Material Purchases</field>
+        <field name="res_model">history.purchase.raw.material</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Window action for People -->
+    <record id="action_history_person" model="ir.actions.act_window">
+        <field name="name">People</field>
+        <field name="res_model">history.person</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Window action for Locations -->
+    <record id="action_history_location" model="ir.actions.act_window">
+        <field name="name">Locations</field>
+        <field name="res_model">history.location</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Window action for Clothing Types -->
+    <record id="action_history_clothing_type" model="ir.actions.act_window">
+        <field name="name">Clothing Types</field>
+        <field name="res_model">history.clothing.type</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Window action for Colors -->
+    <record id="action_history_color" model="ir.actions.act_window">
+        <field name="name">Colors</field>
+        <field name="res_model">history.color</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Window action for Clothing Materials -->
+    <record id="action_history_clothing_material" model="ir.actions.act_window">
+        <field name="name">Clothing Materials</field>
+        <field name="res_model">history.clothing.material</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Window action for Source Accounts -->
+    <record id="action_history_source_account" model="ir.actions.act_window">
+        <field name="name">Source Accounts</field>
+        <field name="res_model">history.source.account</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Top-level Application Menu -->
+    <menuitem id="menu_lys_root" name="Lys" sequence="1"/>
+
+    <!-- Purchases Submenu -->
+    <menuitem id="menu_lys_purchases" name="Purchases" parent="menu_lys_root" sequence="10"/>
+
+    <!-- Menu entry for Clothing Purchases -->
+    <menuitem id="menu_lys_purchase_clothing"
+              name="Clothing Purchases"
+              parent="menu_lys_purchases"
+              action="action_history_purchase_clothing"
+              sequence="10"/>
+
+    <!-- Menu entry for Raw Material Purchases -->
+    <menuitem id="menu_lys_purchase_raw_material"
+              name="Raw Material Purchases"
+              parent="menu_lys_purchases"
+              action="action_history_purchase_raw_material"
+              sequence="20"/>
+
+    <!-- Accounts Submenu -->
+    <menuitem id="menu_lys_accounts" name="Accounts" parent="menu_lys_root" sequence="15"/>
+
+    <!-- Menu entry for Source Accounts -->
+    <menuitem id="menu_lys_accounts_source_account"
+              name="Source Accounts"
+              parent="menu_lys_accounts"
+              action="action_history_source_account"
+              sequence="10"/>
+
+    <!-- Settings Submenu -->
+    <menuitem id="menu_lys_settings" name="Settings" parent="menu_lys_root" sequence="1000"/>
+
+    <!-- Menu entry for People -->
+    <menuitem id="menu_lys_settings_person"
+              name="People"
+              parent="menu_lys_settings"
+              action="action_history_person"
+              sequence="10"/>
+
+    <!-- Menu entry for Locations -->
+    <menuitem id="menu_lys_settings_location"
+              name="Locations"
+              parent="menu_lys_settings"
+              action="action_history_location"
+              sequence="20"/>
+
+    <!-- Menu entry for Clothing Types -->
+    <menuitem id="menu_lys_settings_clothing_type"
+              name="Clothing Types"
+              parent="menu_lys_settings"
+              action="action_history_clothing_type"
+              sequence="30"/>
+
+    <!-- Menu entry for Clothing Materials -->
+    <menuitem id="menu_lys_settings_clothing_material"
+              name="Clothing Materials"
+              parent="menu_lys_settings"
+              action="action_history_clothing_material"
+              sequence="40"/>
+    <!-- Menu entry for Colors -->
+    <menuitem id="menu_lys_settings_color"
+              name="Colors"
+              parent="menu_lys_settings"
+              action="action_history_color"
+              sequence="40"/>
+
+    <!-- Menu entry for Currencies -->
+    <menuitem id="menu_lys_settings_currency"
+              name="Currencies"
+              parent="menu_lys_settings"
+              action="base.action_currency_form"
+              sequence="50"/>
+
+    <!-- Menu entry for Units of Measure -->
+    <menuitem id="menu_lys_settings_uom"
+              name="Units of Measure"
+              parent="menu_lys_settings"
+              action="uom.product_uom_form_action"
+              sequence="60"/>
+</odoo>
