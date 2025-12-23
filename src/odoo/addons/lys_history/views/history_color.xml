@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>
-                <field name="annotation"/>
+                <field name="sub_category"/>
             </list>
         </field>
     </record>
@@ -17,11 +17,11 @@
         <field name="name">history.color.form</field>
         <field name="model">history.color</field>
         <field name="arch" type="xml">
-            <form>
+            <form string="Color">
                 <sheet>
                     <group>
                         <field name="name"/>
-                        <field name="annotation"/>
+                        <field name="sub_category"/>
                     </group>
                 </sheet>
             </form>
