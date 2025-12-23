@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import api, fields, models
 
 
 class HistoryPurchase(models.AbstractModel):
@@ -18,12 +18,6 @@ class HistoryPurchase(models.AbstractModel):
         readonly=False,
     )
 
-    @fields.depends("account_id", "currency_id")
-    def _compute_currency_id(self):
-        for rec in self:
-            if not rec.currency_id and rec.account_id and rec.account_id.currency_id:
-                rec.currency_id = rec.account_id.currency_id
-
     price = fields.Monetary()
     date = fields.Date("Purchase Date", default=lambda rec: rec._default_date())
 
@@ -34,3 +28,9 @@ class HistoryPurchase(models.AbstractModel):
     def _default_date(self):
         last_record = self.search([], order="id desc", limit=1)
         return last_record.date
+
+    @api.depends("account_id", "currency_id")
+    def _compute_currency_id(self):
+        for rec in self:
+            if not rec.currency_id and rec.account_id and rec.account_id.currency_id:
+                rec.currency_id = rec.account_id.currency_id
