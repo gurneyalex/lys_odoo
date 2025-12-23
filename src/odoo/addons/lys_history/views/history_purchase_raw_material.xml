@@ -13,6 +13,7 @@
                 <field name="unit_price"/>
                 <field name="quantity"/>
                 <field name="price"/>
+                <field name="supplier_id"/>
             </list>
         </field>
     </record>
@@ -40,6 +41,7 @@
                     </group>
                     <group>
                         <group>
+                            <field name="supplier_id"/>
                             <field name="quantity"/>
                             <field name="uom_id"/>
                             <field name="unit_price"/>
@@ -52,6 +54,41 @@
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_history_purchase_raw_material_search" model="ir.ui.view">
+        <field name="name">history.purchase.raw.material.search</field>
+        <field name="model">history.purchase.raw.material</field>
+        <field name="arch" type="xml">
+            <search string="Raw Material Purchases">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="material_id"/>
+                <field name="supplier_id"/>
+                <separator/>
+                <filter
+                    name="group_by_material"
+                    string="Material"
+                    context="{'group_by': 'material_id'}"
+                />
+                <filter
+                    name="group_by_date"
+                    string="Date"
+                    context="{'group_by': 'date'}"
+                />
+                <filter
+                    name="group_by_supplier"
+                    string="Supplier"
+                    context="{'group_by': 'supplier_id'}"
+                />
+                <filter
+                    name="group_by_clothing"
+                    string="Clothing"
+                    context="{'group_by': 'clothing_id'}"
+                />
+            </search>
         </field>
     </record>
 </odoo>

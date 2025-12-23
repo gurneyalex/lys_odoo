@@ -16,3 +16,4 @@ class HistoryPurchaseRawMaterial(models.Model):
     quantity = fields.Float()
     uom_id = fields.Many2one("uom.uom")
     clothing_id = fields.Many2one("history.purchase.clothing")
+    supplier_id = fields.Many2one("history.person", string="Supplier")
