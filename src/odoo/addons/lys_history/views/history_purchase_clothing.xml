@@ -6,6 +6,8 @@
         <field name="model">history.purchase.clothing</field>
         <field name="arch" type="xml">
             <list>
+                <field name="clothing_type_id"/>
+                <field name="clothing_category_id"/>
                 <field name="name"/>
                 <field name="date"/>
                 <field name="person_id"/>
@@ -22,14 +24,16 @@
         <field name="arch" type="xml">
             <search>
                 <field name="name"/>
-                <field name="type"/>
+                <field name="clothing_type_id"/>
+                <field name="clothing_category_id"/>
                 <field name="person_id"/>
                 <field name="craftsman_ids"/>
                 <group>
-                    <filter string="Type" name="group_by_type" context="{'group_by': 'type'}"/>
+                    <filter string="Type" name="group_by_type" context="{'group_by': 'clothing_type_id'}"/>
                     <filter string="Account" name="group_by_account_id" context="{'group_by': 'account_id'}"/>
                     <filter string="Date" name="group_by_date" context="{'group_by': 'date'}"/>
                     <filter string="Person" name="group_by_person_id" context="{'group_by': 'person_id'}"/>
+                    <filter string="Category" name="group_by_person_id" context="{'group_by': 'clothing_category_id'}"/>
                 </group>
             </search>
         </field>
@@ -50,7 +54,8 @@
                         </group>
                         <group>
                             <field name="name"/>
-                            <field name="type"/>
+                            <field name="clothing_type_id"/>
+                            <field name="clothing_category_id"/>
                             <field name="caracteristic_ids" widget="many2many_tags"/>
                             <field name="person_id"/>
                             <field name="craftsman_ids" widget="many2many_tags" />

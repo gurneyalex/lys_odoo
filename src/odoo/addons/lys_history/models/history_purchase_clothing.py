@@ -9,7 +9,12 @@ class HistoryPurchaseClothing(models.Model):
     person_id = fields.Many2one("history.person", string="Recipient")
     craftsman_ids = fields.Many2many("history.person", string="Craftsmen")
     name = fields.Char(required=True)
-    type = fields.Many2one("history.clothing.type", required=True)
+    clothing_type_id = fields.Many2one("history.clothing.type", required=True)
+    clothing_category_id = fields.Many2one(
+        related="clothing_type_id.category_id",
+        store=True,
+        string="Clothing Category",
+    )
 
     material_ids = fields.One2many("history.purchase.raw.material", "clothing_id")
     caracteristic_ids = fields.Many2many("history.clothing.caracteristic")
