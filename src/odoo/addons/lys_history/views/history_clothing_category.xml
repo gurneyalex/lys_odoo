@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form View -->
+    <record id="view_history_clothing_category_form" model="ir.ui.view">
+        <field name="name">history.clothing.category.form</field>
+        <field name="model">history.clothing.category</field>
+        <field name="arch" type="xml">
+            <form string="Clothing Category">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <notebook>
+                        <page string="Clothings">
+                            <field name="clothing_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- List View -->
+    <record id="view_history_clothing_category_list" model="ir.ui.view">
+        <field name="name">history.clothing.category.list</field>
+        <field name="model">history.clothing.category</field>
+        <field name="arch" type="xml">
+            <list string="Clothing Categories">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+</odoo>

@@ -35,6 +35,12 @@
         <field name="view_mode">list,form</field>
     </record>
 
+    <record id="action_history_clothing_category" model="ir.actions.act_window">
+        <field name="name">Clothing Categories</field>
+        <field name="res_model">history.clothing.category</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
     <!-- Window action for Colors -->
     <record id="action_history_color" model="ir.actions.act_window">
         <field name="name">Colors</field>
@@ -53,7 +59,7 @@
     <record id="action_history_clothing_caracteristic" model="ir.actions.act_window">
         <field name="name">Clothing Caracteristics</field>
         <field name="res_model">history.clothing.caracteristic</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">list</field>
     </record>
 
     <!-- Window action for Source Accounts -->
@@ -116,7 +122,12 @@
               parent="menu_lys_settings"
               action="action_history_clothing_type"
               sequence="30"/>
-
+    <menuitem
+        id="menu_history_clothing_category"
+        name="Clothing Categories"
+        action="action_history_clothing_category"
+        parent="menu_lys_settings"
+        sequence="35"/>
     <!-- Menu entry for Clothing Materials -->
     <menuitem id="menu_lys_settings_clothing_material"
               name="Clothing Materials"
@@ -143,4 +154,5 @@
               parent="menu_lys_settings"
               action="uom.product_uom_form_action"
               sequence="60"/>
+
 </odoo>
