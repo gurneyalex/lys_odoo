@@ -11,7 +11,19 @@ class HistoryPurchase(models.AbstractModel):
         default=lambda rec: rec._default_account_id(),
     )
     source_page = fields.Char()
-    currency_id = fields.Many2one(related="account_id.currency_id")
+    currency_id = fields.Many2one(
+        "res.currency",
+        compute="_compute_currency_id",
+        store=True,
+        readonly=False,
+    )
+
+    @fields.depends("account_id", "currency_id")
+    def _compute_currency_id(self):
+        for rec in self:
+            if not rec.currency_id and rec.account_id and rec.account_id.currency_id:
+                rec.currency_id = rec.account_id.currency_id
+
     price = fields.Monetary()
     date = fields.Date("Purchase Date", default=lambda rec: rec._default_date())
 
