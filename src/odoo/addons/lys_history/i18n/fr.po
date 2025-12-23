@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-22 15:26+0000\n"
+"POT-Creation-Date: 2025-12-23 17:58+0000\n"
 "PO-Revision-Date: 2025-12-22 13:49+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -30,11 +30,6 @@ msgid "Accounts"
 msgstr "Comptes"
 
 #. module: lys_history
-#: model:ir.model.fields,field_description:lys_history.field_history_color__annotation
-msgid "Annotation"
-msgstr "Annotation"
-
-#. module: lys_history
 #: model:uom.uom,name:lys_history.uom_medieval_length_aune
 msgid "Aune"
 msgstr "Aune"
@@ -45,21 +40,41 @@ msgid "Caracteristic"
 msgstr "Caractéristique"
 
 #. module: lys_history
+#: model:ir.model.fields,field_description:lys_history.field_history_clothing_type__category_id
+#: model_terms:ir.ui.view,arch_db:lys_history.view_history_purchase_clothing_search
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: lys_history
 #: model:ir.model.fields,field_description:lys_history.field_history_purchase_raw_material__clothing_id
+#: model_terms:ir.ui.view,arch_db:lys_history.view_history_purchase_raw_material_search
 msgid "Clothing"
 msgstr "Vêtement"
 
 #. module: lys_history
 #: model:ir.model,name:lys_history.model_history_clothing_caracteristic
-#: model_terms:ir.ui.view,arch_db:lys_history.view_history_clothing_caracteristic_form
-msgid "Clothing Caracteristic"
-msgstr "Caractéristique de vêtement"
+msgid "Clothing Caracteristic, used as tags on a clothing purchase"
+msgstr "Caractéristique de vêtement, utilisée comme étiquette sur un achat de vêtement"
 
 #. module: lys_history
 #: model:ir.actions.act_window,name:lys_history.action_history_clothing_caracteristic
 #: model_terms:ir.ui.view,arch_db:lys_history.view_history_clothing_caracteristic_list
 msgid "Clothing Caracteristics"
 msgstr "Caractéristiques de vêtement"
+
+#. module: lys_history
+#: model:ir.actions.act_window,name:lys_history.action_history_clothing_category
+#: model:ir.ui.menu,name:lys_history.menu_history_clothing_category
+#, fuzzy
+msgid "Clothing Categories"
+msgstr "Matières de vêtement"
+
+#. module: lys_history
+#: model:ir.model,name:lys_history.model_history_clothing_category
+#: model:ir.model.fields,field_description:lys_history.field_history_purchase_clothing__clothing_category_id
+#, fuzzy
+msgid "Clothing Category"
+msgstr "Matière de vêtement"
 
 #. module: lys_history
 #: model:ir.model,name:lys_history.model_history_clothing_material
@@ -80,6 +95,7 @@ msgstr "Achats de vêtements"
 
 #. module: lys_history
 #: model:ir.model,name:lys_history.model_history_clothing_type
+#: model:ir.model.fields,field_description:lys_history.field_history_purchase_clothing__clothing_type_id
 msgid "Clothing Type"
 msgstr "Type de vêtement"
 
@@ -90,6 +106,12 @@ msgid "Clothing Types"
 msgstr "Types de vêtement"
 
 #. module: lys_history
+#: model:ir.model.fields,field_description:lys_history.field_history_clothing_category__clothing_ids
+#, fuzzy
+msgid "Clothings"
+msgstr "Vêtement"
+
+#. module: lys_history
 #: model:ir.model.fields,field_description:lys_history.field_history_source_account__code
 msgid "Code"
 msgstr "Code"
@@ -97,6 +119,7 @@ msgstr "Code"
 #. module: lys_history
 #: model:ir.model,name:lys_history.model_history_color
 #: model:ir.model.fields,field_description:lys_history.field_history_purchase_raw_material__color_id
+#: model_terms:ir.ui.view,arch_db:lys_history.view_history_color_form
 msgid "Color"
 msgstr "Couleur"
 
@@ -113,6 +136,7 @@ msgstr "Artisans"
 
 #. module: lys_history
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_caracteristic__create_uid
+#: model:ir.model.fields,field_description:lys_history.field_history_clothing_category__create_uid
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_material__create_uid
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_type__create_uid
 #: model:ir.model.fields,field_description:lys_history.field_history_color__create_uid
@@ -126,6 +150,7 @@ msgstr "Créé par"
 
 #. module: lys_history
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_caracteristic__create_date
+#: model:ir.model.fields,field_description:lys_history.field_history_clothing_category__create_date
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_material__create_date
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_type__create_date
 #: model:ir.model.fields,field_description:lys_history.field_history_color__create_date
@@ -140,10 +165,17 @@ msgstr "Créé le"
 #. module: lys_history
 #: model:ir.ui.menu,name:lys_history.menu_lys_settings_currency
 msgid "Currencies"
-msgstr "Devises"
+msgstr "Monnaies"
+
+#. module: lys_history
+#: model:ir.model.fields,field_description:lys_history.field_history_purchase__currency_id
+#: model:ir.model.fields,field_description:lys_history.field_history_purchase_clothing__currency_id
+msgid "Currency"
+msgstr "Monnaie"
 
 #. module: lys_history
 #: model_terms:ir.ui.view,arch_db:lys_history.view_history_purchase_clothing_search
+#: model_terms:ir.ui.view,arch_db:lys_history.view_history_purchase_raw_material_search
 msgid "Date"
 msgstr "Date"
 
@@ -159,6 +191,7 @@ msgstr "Date de début"
 
 #. module: lys_history
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_caracteristic__display_name
+#: model:ir.model.fields,field_description:lys_history.field_history_clothing_category__display_name
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_material__display_name
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_type__display_name
 #: model:ir.model.fields,field_description:lys_history.field_history_color__display_name
@@ -178,6 +211,7 @@ msgstr "Fonction"
 
 #. module: lys_history
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_caracteristic__id
+#: model:ir.model.fields,field_description:lys_history.field_history_clothing_category__id
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_material__id
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_type__id
 #: model:ir.model.fields,field_description:lys_history.field_history_color__id
@@ -192,6 +226,7 @@ msgstr "ID"
 
 #. module: lys_history
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_caracteristic__write_uid
+#: model:ir.model.fields,field_description:lys_history.field_history_clothing_category__write_uid
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_material__write_uid
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_type__write_uid
 #: model:ir.model.fields,field_description:lys_history.field_history_color__write_uid
@@ -205,6 +240,7 @@ msgstr "Mis à jour par"
 
 #. module: lys_history
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_caracteristic__write_date
+#: model:ir.model.fields,field_description:lys_history.field_history_clothing_category__write_date
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_material__write_date
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_type__write_date
 #: model:ir.model.fields,field_description:lys_history.field_history_color__write_date
@@ -240,6 +276,7 @@ msgstr "Lys"
 #. module: lys_history
 #: model:ir.model.fields,field_description:lys_history.field_history_purchase_clothing__material_ids
 #: model:ir.model.fields,field_description:lys_history.field_history_purchase_raw_material__material_id
+#: model_terms:ir.ui.view,arch_db:lys_history.view_history_purchase_raw_material_search
 msgid "Material"
 msgstr "Matière"
 
@@ -255,6 +292,7 @@ msgstr "Matières utilisées"
 
 #. module: lys_history
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_caracteristic__name
+#: model:ir.model.fields,field_description:lys_history.field_history_clothing_category__name
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_material__name
 #: model:ir.model.fields,field_description:lys_history.field_history_clothing_type__name
 #: model:ir.model.fields,field_description:lys_history.field_history_color__name
@@ -335,6 +373,7 @@ msgstr "Quantité"
 #. module: lys_history
 #: model:ir.actions.act_window,name:lys_history.action_history_purchase_raw_material
 #: model:ir.ui.menu,name:lys_history.menu_lys_purchase_raw_material
+#: model_terms:ir.ui.view,arch_db:lys_history.view_history_purchase_raw_material_search
 msgid "Raw Material Purchases"
 msgstr "Achats de matières premières"
 
@@ -373,7 +412,17 @@ msgid "Source Page"
 msgstr "Page source"
 
 #. module: lys_history
-#: model:ir.model.fields,field_description:lys_history.field_history_purchase_clothing__type
+#: model:ir.model.fields,field_description:lys_history.field_history_color__sub_category
+msgid "Sub Category"
+msgstr "Sous-catégorie"
+
+#. module: lys_history
+#: model:ir.model.fields,field_description:lys_history.field_history_purchase_raw_material__supplier_id
+#: model_terms:ir.ui.view,arch_db:lys_history.view_history_purchase_raw_material_search
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: lys_history
 #: model_terms:ir.ui.view,arch_db:lys_history.view_history_purchase_clothing_search
 msgid "Type"
 msgstr "Type"
@@ -405,9 +454,13 @@ msgid "a shortcut for quickly searching"
 msgstr "un raccourci pour une recherche rapide"
 
 #. module: lys_history
-#: model:ir.model.fields,field_description:lys_history.field_history_purchase__currency_id
-#: model:ir.model.fields,field_description:lys_history.field_history_purchase_clothing__currency_id
 #: model:ir.model.fields,field_description:lys_history.field_history_purchase_raw_material__currency_id
 #: model:ir.model.fields,field_description:lys_history.field_history_source_account__currency_id
 msgid "main currency"
-msgstr "devise principale"
+msgstr "Monnaie principale"
+
+#~ msgid "Annotation"
+#~ msgstr "Annotation"
+
+#~ msgid "Clothing Caracteristic"
+#~ msgstr "Caractéristique de vêtement"
