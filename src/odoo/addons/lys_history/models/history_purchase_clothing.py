@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import api, fields, models
 
 
 class HistoryPurchaseClothing(models.Model):
@@ -18,3 +18,10 @@ class HistoryPurchaseClothing(models.Model):
 
     material_ids = fields.One2many("history.purchase.raw.material", "clothing_id")
     caracteristic_ids = fields.Many2many("history.clothing.caracteristic")
+
+    @api.depends("name", "clothing_type_id", "date")
+    def _compute_display_name(self):
+        for record in self:
+            record.display_name = (
+                f"{record.clothing_type_id.name} - {record.name} ({record.date})"
+            )

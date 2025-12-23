@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import api, fields, models
 
 
 class HistoryPurchaseRawMaterial(models.Model):
@@ -17,3 +17,8 @@ class HistoryPurchaseRawMaterial(models.Model):
     uom_id = fields.Many2one("uom.uom")
     clothing_id = fields.Many2one("history.purchase.clothing")
     supplier_id = fields.Many2one("history.person", string="Supplier")
+
+    @api.depends("name", "material_id", "supplier_id", "date")
+    def _compute_display_name(self):
+        for record in self:
+            record.display_name = f"{record.material_id.name} - {record.name} ({record.supplier_id.name} {record.date})"
